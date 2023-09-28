@@ -1,7 +1,21 @@
-function HomePage() {
+function HomePage({ companieList }) {
+  console.log(companieList);
+
   return (
     <div>
-      <h1>HomePage</h1>
+      <h1>
+        StackTracker: Discover Tech Stacks Used by Top CompanieListcompanieList
+      </h1>
+      {companieList.map((companie) => {
+        return (
+          <div className='product-list-container'>
+            <div className='product-card'>
+              <img src={companie.logo} alt={companie.name} />
+              <h3 className='product-title'>{companie.name}</h3>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
